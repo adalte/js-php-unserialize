@@ -103,6 +103,12 @@
 						readdata = readData[1];
 						dataoffset += chrs + 1;
 						break;
+					case 'r':
+						readData = read_until(data, dataoffset, ';');
+						chrs = readData[0];
+						readdata = '###R:' + readData[1];
+						dataoffset += chrs + 1;
+						break;
 					case 'b':
 						typeconvert = function (x) {
 							return parseInt(x, 10) !== 0;
